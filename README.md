@@ -12,8 +12,9 @@ Test home page for Recite.
 
 ### Edits
 There are only two files in play if you want to make edits:  
-1. HTML: [/public/index.html](https://github.com/johnpduane/recite-home/blob/master/public/index.html)  
-1. SCSS: [/public/stylesheets/style.scss](https://github.com/johnpduane/recite-home/blob/master/public/stylesheets/style.scss)  
+* HTML: [/public/index.html](https://github.com/johnpduane/recite-home/blob/master/public/index.html)  
+* SCSS: [/public/stylesheets/style.scss](https://github.com/johnpduane/recite-home/blob/master/public/stylesheets/style.scss)  
+
 If you make changes to the scss file, the project will automatically compile a new CSS file.
 
 
