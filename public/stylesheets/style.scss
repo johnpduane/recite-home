@@ -1,0 +1,282 @@
+//Global Styles
+
+$font-family: 'Open Sans', sans-serif;
+$font-normal: 14px;
+$font-large: 28px;
+$color-banner-background: #000C38;
+$color-button-background: #00A4E4;
+$color-major-header-text: #6FB3E9;
+$color-minor-header-text: #1F4D9A;
+$color-bg-highlight: #DFE6F2;
+$screen-lg-min: 980px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: $font-normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  width: 284px;
+  height: 75px;
+  background-color: $color-button-background;
+  border: 2px solid white;
+  text-align: center;
+  padding: 18px;
+  color: white;
+}
+
+.bg-highlight {
+  background-color: $color-bg-highlight;
+}
+
+
+//Header Banner - Logo and Image
+.header-container {
+  width: 100%;
+  background-color: $color-banner-background;
+  overflow: hidden;
+
+  @media(min-width: $screen-lg-min) {
+    height: 420px;
+  }
+
+  .logo-container {
+    text-align: center;
+    @media(min-width: $screen-lg-min) {
+      text-align: inherit;
+      height: inherit;
+      float: left;
+      width: 40%;
+    }
+
+    .logo {
+      padding: 24px;
+      max-width: 100%;
+      max-height: 200px;
+      @media(min-width: $screen-lg-min) {
+        padding: 0;
+        width: 387px;
+        height: 132px;
+        margin-top: 130px;
+        float: right;
+      }
+    }
+  }
+
+  .banner-container {
+    display: none;
+    @media(min-width: $screen-lg-min) {
+      display: inherit;
+      float: left;
+      width: 60%;
+    }
+
+    .banner-img {
+      width: 790px;
+      height: 423px;
+    }
+  }
+
+}
+
+//Actions - Sign In and Contact Us
+.action-container {
+  width: 100%;
+  font-size: $font-large;
+  @media(min-width: $screen-lg-min) {
+    height: 50px;
+  }
+
+  .contact-container {
+    text-align: center;
+    @media(min-width: $screen-lg-min) {
+      float: left;
+      width: 50%;
+    }
+
+    .sign-in {
+      margin: 14px auto;
+      @media(min-width: $screen-lg-min) {
+        float: right;
+        margin-right: 15px;
+        margin-top: -40px;
+      }
+    }
+    .contact-us {
+      margin: 14px auto;
+      background-color: $color-major-header-text; //do we want a different color here?
+      @media(min-width: $screen-lg-min) {
+        margin-left: 15px;
+        margin-top: -40px;
+      }
+    }
+
+  }
+}
+
+
+//Values - Problem & Solution
+.value-container {
+  width: 100%;
+  padding-top: 5px;
+  font-size: $font-normal;
+  @media(min-width: $screen-lg-min) {
+    height: 180px;
+    display: inline-table;
+  }
+
+  .separator {
+    @media(min-width: $screen-lg-min) {
+      border-left: 1px solid lightgrey;
+    }
+  }
+
+  .ps-container {
+    padding: 10px 30px;
+    @media(min-width: $screen-lg-min) {
+      float: left;
+      width: 50%;
+      margin-left: -1px;
+    }
+
+    .value-header {
+      font-size: $font-large;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 20px 0;
+      color: $color-minor-header-text;
+      border-top: 1px solid $color-bg-highlight;
+      @media(min-width: $screen-lg-min) {
+        border-top: 0;
+        margin-right: 15px;
+      }
+    }
+    .value-text {
+      text-align: center;
+      line-height: 1.8;
+      color: darkgrey;
+      @media(min-width: $screen-lg-min) {
+        margin-left: 15px;
+        text-align: left;
+      }
+    }
+
+  }
+}
+
+//Features Banner
+.features {
+  width: 100%;
+  font-size: 48px;
+  text-transform: uppercase;
+  background-color: $color-banner-background;
+  color: $color-major-header-text;
+  text-align: center;
+  margin-top: 20px;
+  @media(min-width: $screen-lg-min) {
+    margin-top: 40px;
+  }
+}
+
+//Feature List
+.feature {
+  width: 100%;
+  text-align: center;
+  font-size: $font-normal;
+  @media(min-width: $screen-lg-min) {
+    height: 260px;
+    text-align: inherit;
+  }
+
+  .feature-image {
+    padding: 40px 0 20px 0;
+    @media(min-width: $screen-lg-min) {
+      padding: inherit;
+      float: left;
+      width: 40%;
+    }
+    img {
+      height: 223px;
+      border: 1px solid lightgrey;
+      @media(min-width: $screen-lg-min) {
+        float: right;
+        margin-top: 18px;
+        margin-right: 50px;
+      }
+    }
+  }
+
+  .feature-text {
+    padding: 0 40px 30px 30px;
+     @media(min-width: $screen-lg-min) {
+       padding: inherit;
+       float: left;
+       width: 60%;
+    }
+
+    .feature-header {
+      font-size: $font-large;
+      text-transform: uppercase;
+      color: $color-minor-header-text;
+      @media(min-width: $screen-lg-min) {
+        padding-top: 50px;
+        padding-bottom: 14px;
+      }
+    }
+
+    .feature-body {
+      line-height: 1.8;
+      @media(min-width: $screen-lg-min) {
+        margin-right: 40px;
+      }
+    }
+
+  }
+}
+
+//Get Started Banner
+.get-started{
+  height: 267px;
+  text-align: center;
+  font-size: $font-large;
+  color: white;
+  background-color: $color-banner-background;
+  @media(min-width: $screen-lg-min) {
+    background: url("/images/banner.png") 150% center/70% no-repeat $color-banner-background;
+  }
+
+  .get-started-text {
+    padding-top: 55px;
+    padding-bottom: 24px;
+  }
+
+  .get-started-button {
+    margin: 0 auto;
+  }
+}
+
+//Footer
+.footer {
+  height: 100px;
+  color: darkgrey;
+  text-align: center;
+  font-size: $font-normal;
+
+  span {
+    display: block;
+    padding-top: 40px;
+  }
+}
