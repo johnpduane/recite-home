@@ -4,11 +4,12 @@ $font-family: 'Open Sans', sans-serif;
 $font-normal: 14px;
 $font-large: 28px;
 $color-banner-background: #000C38;
-$color-button-background: #00A4E4;
+$color-button-background: #3C6B0B;
 $color-major-header-text: #6FB3E9;
 $color-minor-header-text: #1F4D9A;
 $color-bg-highlight: #DFE6F2;
-$screen-lg-min: 980px;
+$screen-md-min: 768px;
+$screen-lg-min: 850px;
 
 html {
   box-sizing: border-box;
@@ -25,21 +26,27 @@ body {
 }
 
 a {
-  text-decoration: none;
+  color: $color-banner-background;
 }
 
 .button {
+  display: inline-block;
+  color: white;
   width: 284px;
   height: 75px;
   background-color: $color-button-background;
   border: 2px solid white;
   text-align: center;
   padding: 18px;
-  color: white;
+  text-decoration: none;
 }
 
 .bg-highlight {
   background-color: $color-bg-highlight;
+}
+
+.text-verydarkgray {
+  color: #6a6a6a;
 }
 
 
@@ -49,44 +56,61 @@ a {
   background-color: $color-banner-background;
   overflow: hidden;
 
-  @media(min-width: $screen-lg-min) {
+  @media(min-width: $screen-md-min) {
     height: 420px;
   }
 
   .logo-container {
     text-align: center;
-    @media(min-width: $screen-lg-min) {
-      text-align: inherit;
+    padding: 36px;
+    @media(min-width: $screen-md-min) {
+      text-align: right;
       height: inherit;
       float: left;
-      width: 40%;
+      padding: 0;
+      width: 55%;
+    }
+
+    .logo-image-container {
+      display: inline-block;
+      text-align: left;
+      @media(min-width: $screen-md-min) {
+        display: inherit;
+        float: right;
+      }
     }
 
     .logo {
-      padding: 24px;
-      max-width: 100%;
-      max-height: 200px;
-      @media(min-width: $screen-lg-min) {
+      width: 46vw;
+      @media(min-width: $screen-md-min) {
         padding: 0;
-        width: 387px;
-        height: 132px;
-        margin-top: 130px;
-        float: right;
+        width: 40vw;
+        max-width: 470px;
+        margin-top: 110px;
+        text-align: right;
+      }
+
+    }
+    .logo-text {
+      font-size: 3.7vw;
+      color: white;
+      @media(min-width: $screen-md-min) {
+        font-size: 3.4vmin;
       }
     }
   }
 
   .banner-container {
     display: none;
-    @media(min-width: $screen-lg-min) {
+    @media(min-width: $screen-md-min) {
       display: inherit;
       float: left;
-      width: 60%;
+      width: 45%;
     }
 
     .banner-img {
-      width: 790px;
-      height: 423px;
+      margin-left: -400px;
+      margin-top: -10px;
     }
   }
 
@@ -96,20 +120,20 @@ a {
 .action-container {
   width: 100%;
   font-size: $font-large;
-  @media(min-width: $screen-lg-min) {
+  @media(min-width: $screen-md-min) {
     height: 50px;
   }
 
   .contact-container {
     text-align: center;
-    @media(min-width: $screen-lg-min) {
+    @media(min-width: $screen-md-min) {
       float: left;
       width: 50%;
     }
 
     .sign-in {
       margin: 14px auto;
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
         float: right;
         margin-right: 15px;
         margin-top: -40px;
@@ -117,8 +141,8 @@ a {
     }
     .contact-us {
       margin: 14px auto;
-      background-color: $color-major-header-text; //do we want a different color here?
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
+        float: left;
         margin-left: 15px;
         margin-top: -40px;
       }
@@ -133,23 +157,29 @@ a {
   width: 100%;
   padding-top: 5px;
   font-size: $font-normal;
-  @media(min-width: $screen-lg-min) {
-    height: 180px;
-    display: inline-table;
+  @media(min-width: $screen-md-min) {
+    text-align: center;
+  }
+
+  .value-container-inner {
+    @media(min-width: $screen-md-min) {
+      display: inline-block;
+    }
   }
 
   .separator {
-    @media(min-width: $screen-lg-min) {
+    @media(min-width: $screen-md-min) {
       border-left: 1px solid lightgrey;
     }
   }
 
   .ps-container {
     padding: 10px 30px;
-    @media(min-width: $screen-lg-min) {
+    @media(min-width: $screen-md-min) {
       float: left;
       width: 50%;
       margin-left: -1px;
+      max-width: 650px;
     }
 
     .value-header {
@@ -159,7 +189,7 @@ a {
       padding: 20px 0;
       color: $color-minor-header-text;
       border-top: 1px solid $color-bg-highlight;
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
         border-top: 0;
         margin-right: 15px;
       }
@@ -168,7 +198,7 @@ a {
       text-align: center;
       line-height: 1.8;
       color: darkgrey;
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
         margin-left: 15px;
         text-align: left;
       }
@@ -186,52 +216,71 @@ a {
   color: $color-major-header-text;
   text-align: center;
   margin-top: 20px;
-  @media(min-width: $screen-lg-min) {
+  @media(min-width: $screen-md-min) {
     margin-top: 40px;
   }
 }
 
 //Feature List
+.border-right-blue {
+  border-right: 18px solid #0D2784;
+}
+.border-right-green {
+  border-right: 18px solid #3C6B0B;
+}
+.border-right-yellow {
+  border-right: 18px solid #FFBC00;
+}
+.border-right-red {
+  border-right: 18px solid #451507;
+}
+
 .feature {
   width: 100%;
   text-align: center;
   font-size: $font-normal;
-  @media(min-width: $screen-lg-min) {
+  @media(min-width: $screen-md-min) {
     height: 260px;
     text-align: inherit;
   }
 
   .feature-image {
     padding: 40px 0 20px 0;
-    @media(min-width: $screen-lg-min) {
+    @media(min-width: $screen-md-min) {
       padding: inherit;
       float: left;
       width: 40%;
     }
     img {
-      height: 223px;
+      height: 248px;
       border: 1px solid lightgrey;
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
+        height: 216px;
         float: right;
-        margin-top: 18px;
-        margin-right: 50px;
+        margin-top: 21px;
+        margin-right: 30px;
+      }
+      @media(min-width: $screen-lg-min) {
+        height: 248px;
+        margin-top: 5px;
       }
     }
   }
 
   .feature-text {
     padding: 0 40px 30px 30px;
-     @media(min-width: $screen-lg-min) {
+     @media(min-width: $screen-md-min) {
        padding: inherit;
        float: left;
        width: 60%;
+       max-width: 700px;
     }
 
     .feature-header {
       font-size: $font-large;
       text-transform: uppercase;
       color: $color-minor-header-text;
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
         padding-top: 50px;
         padding-bottom: 14px;
       }
@@ -239,7 +288,7 @@ a {
 
     .feature-body {
       line-height: 1.8;
-      @media(min-width: $screen-lg-min) {
+      @media(min-width: $screen-md-min) {
         margin-right: 40px;
       }
     }
@@ -248,19 +297,18 @@ a {
 }
 
 //Get Started Banner
-.get-started{
+.get-started {
   height: 267px;
   text-align: center;
   font-size: $font-large;
   color: white;
   background-color: $color-banner-background;
-  @media(min-width: $screen-lg-min) {
+  @media(min-width: $screen-md-min) {
     background: url("/images/banner.png") 150% center/70% no-repeat $color-banner-background;
   }
 
   .get-started-text {
-    padding-top: 55px;
-    padding-bottom: 24px;
+    padding: 55px 18px 24px 18px;
   }
 
   .get-started-button {
